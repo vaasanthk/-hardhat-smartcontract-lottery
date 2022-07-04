@@ -2,7 +2,9 @@
 
 # About Project
 This Smartcontract is created to automate the lottery system, a minium 0.1 ETH is required to enter the lottery. The smart contract generates a random number to pick a winner and pays the winner including entery fee.
-
+# Built With
+* [Node.js](https://nodejs.org/en/)
+* [Solidity](https://docs.soliditylang.org/en/v0.8.15/)
 
 [Full Repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
 
