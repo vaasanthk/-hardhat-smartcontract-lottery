@@ -1,6 +1,7 @@
 # Hardhat Smartcontract Lottery (Raffle) 
 
-
+# About Project
+This Smartcontract is created to automate the lottery system, a minium 0.1 ETH is required to enter the lottery. The smart contract generates a random number to pick a winner and pays the winner including entery fee.
 
 
 [Full Repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
