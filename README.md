@@ -71,11 +71,13 @@ yarn hardhat coverage
 
 1. Setup environment variabltes
 
-You'll want to set your `RINKEBY_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+you can deploy your contracts on Goerli or Ploygon network.
 
-- `PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
+You'll want to set your `GOERLI_RPC_URL OR POLYGON_RPC_URL` and `GOERLI_PRIVATE_KEY OR POLYGON_PRIVATE_KEY` as environment variables. You can add them to a `.env` file.
+
+- `GOERLI_PRIVATE_KEY OR POLYGON_PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
   - You can [learn how to export it here](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
-- `RINKEBY_RPC_URL`: This is url of the rinkeby testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
+- `GOERLI_RPC_URL`: This is url of the rinkeby testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
 
 2. Get testnet ETH
 
@@ -96,7 +98,7 @@ In your `helper-hardhat-config.js` add your `subscriptionId` under the section o
 
 Then run:
 ```
-yarn hardhat deploy --network rinkeby
+yarn hardhat deploy --network goerli or yarn hardhat deploy --network polygon
 ```
 
 And copy / remember the contract address. 
@@ -118,7 +120,7 @@ Go to [keepers.chain.link](https://keepers.chain.link/new) and register a new up
 You're contract is now setup to be a tamper proof autonomous verifiably random lottery. Enter the lottery by running:
 
 ```
-yarn hardhat run scripts/enter.js --network rinkeby
+yarn hardhat run scripts/enter.js --network goerli or yarn hardhat run scripts/enter.js --network ploygon 
 ```
 
 ### Estimate gas cost in USD
@@ -150,7 +152,7 @@ yarn lint
 or, to fix: 
 ```
 yarn lint:fix
-```
+````
 
 # Thank you!
 
