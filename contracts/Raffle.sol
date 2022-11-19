@@ -132,6 +132,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
       i_callbackGasLimit,
       NUM_WORDS
     );
+
     // Quiz... is this redundant?
     emit RequestedRaffleWinner(requestId);
   }
