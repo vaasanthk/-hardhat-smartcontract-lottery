@@ -11,6 +11,7 @@ const networkConfig = {
     raffleEntranceFee: ethers.utils.parseEther("0.001"),
     callbackGasLimit: "500000", // 500,000 gas
   },
+
   5: {
     name: "goerli",
     subscriptionId: "6674",
@@ -20,6 +21,7 @@ const networkConfig = {
     callbackGasLimit: "500000", // 500,000 gas
     vrfCoordinatorV2: "0x2Ca8E0C643bDe4C2E08ab1fA0da3401AdAD7734D",
   },
+
   80001: {
     name: "ploygon",
     subscriptionId: "6926",
@@ -29,6 +31,7 @@ const networkConfig = {
     callbackGasLimit: "500000", // 500,000 gas
     vrfCoordinatorV2: "0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed",
   },
+
   1: {
     name: "mainnet",
     keepersUpdateInterval: "30",
