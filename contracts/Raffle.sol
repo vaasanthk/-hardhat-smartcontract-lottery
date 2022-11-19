@@ -124,6 +124,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
         uint256(s_raffleState)
       );
     }
+
     s_raffleState = RaffleState.CALCULATING;
     uint256 requestId = i_vrfCoordinator.requestRandomWords(
       i_gasLane,
