@@ -1,4 +1,4 @@
-const { getNamedAccounts, deployments, network, run } = require("hardhat")
+const { getNamedAccounts, deployments, network } = require("hardhat")
 const {
   networkConfig,
   developmentChains,
@@ -12,11 +12,11 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments
   const { deployer } = await getNamedAccounts()
   const chainId = network.config.chainId
-  let vrfCoordinatorV2Address, subscriptionId
+  let vrfCoordinatorV2Address, subscriptionId, vrfCoordinatorV2Mock
 
   if (chainId == 31337) {
     // create VRFV2 Subscription
-    const vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
+    vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
     vrfCoordinatorV2Address = vrfCoordinatorV2Mock.address
     const transactionResponse = await vrfCoordinatorV2Mock.createSubscription()
     const transactionReceipt = await transactionResponse.wait()
@@ -47,6 +47,11 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
     waitConfirmations: waitBlockConfirmations,
   })
+
+  // Ensure the Raffle contract is a valid consumer of the VRFCoordinatorV2Mock contract.
+  if (developmentChains.includes(network.name)) {
+    await vrfCoordinatorV2Mock.addConsumer(subscriptionId, raffle.address)
+  }
 
   // Verify the deployment
   if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
