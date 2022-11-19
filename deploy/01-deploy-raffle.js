@@ -33,6 +33,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     : VERIFICATION_BLOCK_CONFIRMATIONS
 
   log("----------------------------------------------------")
+
   const arguments = [
     vrfCoordinatorV2Address,
     subscriptionId,
@@ -41,6 +42,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     networkConfig[chainId]["raffleEntranceFee"],
     networkConfig[chainId]["callbackGasLimit"],
   ]
+
   const raffle = await deploy("Raffle", {
     from: deployer,
     args: arguments,
