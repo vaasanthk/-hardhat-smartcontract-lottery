@@ -8235,6 +8235,11 @@ shelljs@^0.8.3:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
+shorthand@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/shorthand/-/shorthand-1.0.0.tgz#4f175cd36668af1c3217b6a77017b2904b9fdbd2"
+  integrity sha512-SRHhaWLsgKTBCq6J433aoX77NXEoQE606g58F4X8uZ12V5tZ3pjx/WaS5t4weFcnmr5HJ8soSGiMouIkg6FyKA==
+
 side-channel@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
